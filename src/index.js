@@ -10,7 +10,15 @@ dotenv.config({
     path:'./env'
 })
 
-connectDb();
+connectDb()
+.then(()=>{
+    app.listen(process.env.PORT||8080, ()=>{
+        console.log(`Server started at port ${process.env.PORT}`);
+    })
+})
+.catch(()=>{
+
+})
 
 /***************second process***************** */
 /*
