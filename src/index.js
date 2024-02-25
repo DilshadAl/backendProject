@@ -1,3 +1,4 @@
+import { app } from "./app.js";
 //require('dotenv').config("./env")
 import dotenv from "dotenv";
 
@@ -16,8 +17,8 @@ connectDb()
         console.log(`Server started at port ${process.env.PORT}`);
     })
 })
-.catch(()=>{
-
+.catch((error)=>{
+    console.log(error)
 })
 
 /***************second process***************** */
